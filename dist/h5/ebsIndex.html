@@ -1,0 +1,71 @@
+<html lang="en" style="height: 100%;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Page-Enter" Content="blendTrans(Duration=0.5)">
+  <meta http-equiv="Page-Exit" Content="blendTrans(Duration=0.5)">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script type="text/javascript" src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset="utf-8"></script>
+  <style>
+    p{color: white;}
+    a{
+        margin-right: 15px;
+    }
+  </style>
+</head>
+<body style="background-color:#2196F3;font-size:20px">
+    <p>
+        <a href="../redux.html">redux</a>
+    <p>
+    <center>
+        <img src= 'lszm.png' style="width:100%;max-width:660px">
+        <div>
+        <p>
+            　　旺旺：<input type="text" id = "ww"/>
+        </p>
+        <p>
+            　　手机：<input type="text" id = 'sj' />
+        </p>
+        <p>
+            日均单量：<input type="text" id = 'dl'/>
+        </p>
+        <p style="display:inline;">
+            店铺数量： <div style="display:inline;color: white;"><label><input name="Fruit" type="radio" value="1" />一个</label>
+<label><input name="Fruit" type="radio" value="2" />多个</label>
+                    </div>
+        </p>
+        </div>
+        <img src = 'ljbm.png' style="cursor: pointer;" onclick= "submit();"/>
+    </center>
+</body>
+<script>
+    window.onload = function (){
+        $('#ww').focus();
+    }
+    function submit(){
+        var json ={};
+        json.ww = $('#ww').val().trim();
+        json.sj = $('#sj').val().trim();
+        json.dl = $('#dl').val().trim();
+        json.sl = $('input[name="Fruit"]:checked').val();
+
+        if(json.ww == ''){
+            return alert('您不输入旺旺昵称如何报名呢？')
+        }
+
+        if(isNaN(json.sj) || json.sj.length != 11){
+            return alert('既然手机号码都填了，那就写正确呗~');
+        }
+        $.ajax({
+            url: "http://ebs.aiyongbao.com/c/saveSellerInfo",
+            data: json,
+            dataType: "jsonp",
+            success: function(data){
+                        $('#ww').val('');
+                        $('#sj').val('');
+                        $('#dl').val('');
+                        alert('报名成功！');
+                     }
+        });
+    }
+</script>
+</html>

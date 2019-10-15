@@ -1,0 +1,123 @@
+/* 搜索框 */
+.containBody {
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    //下拉菜单一
+    .containBodySelect1{
+        margin-left: 100px;   
+    }
+    //下拉菜单二
+    .containBodySelect2{
+        margin-left: 50px;
+        margin-right: 20px;   
+    }
+    // 下拉菜单 公共样式
+    select{
+        width: 100px;
+        height: 25px;
+        cursor: pointer;
+        background-color: #fff;
+        border-color: #f2f2f2;
+    }
+    //搜索栏字体样式
+    span{
+        font-size: 12px;
+        margin:0 5px;
+        color: #505050;
+    }
+    input{
+        padding-left: 5px;
+    }
+    // 搜索栏按钮样式
+    button{
+        height: 25px;
+        width: 60px;
+        color: aliceblue;
+        background-color: #0097e6;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+
+/* 交互表格区 */
+.containFooter1 {
+    height: 400px;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    font-size: 12px;
+    // 表格渲染
+    table{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border-collapse:collapse;
+        // thead样式 
+        thead{
+            height: 100%;
+            width: 100%;
+            tr{
+                width: 100%;
+                float: left;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                width: 100%;
+                display: flex;
+                font-size: 12px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background-color: #f2f2f2;
+                td{
+                    flex:1;
+                    &:nth-child(1){
+                        flex-basis: 20px;
+                        border-top-left-radius: 5px;
+                    }
+                    &:nth-child(16){
+                        border-top-right-radius: 5px;
+                    }
+                }    
+            }
+        }
+        // tbody样式 
+        tbody{
+            height: 100%;
+            width: 100%;
+            tr{
+                float: left;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                width: 100%;
+                display: flex;
+                font-size: 12px;
+                td{
+                    flex:1;
+                    a{
+                        text-decoration:none;
+                    }
+                    &:nth-child(1){
+                        flex-basis: 20px;
+                    }     
+                }     
+            }
+        }
+    }
+}
+//底部上一页下一页样式
+.containFooter2{
+    float: right;
+    margin-right: 130px;
+    margin-top: 10px;
+    span{
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #5ea5e9;
+    }   
+}
